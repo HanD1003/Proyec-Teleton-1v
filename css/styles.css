@@ -1,0 +1,522 @@
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --text-light: #ffffff;
+  --text-dark: #2c3e50;
+  --background-light: #f5f6fa;
+  --background-dark: #2c3e50;
+  --transition-speed: 0.3s;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --border-radius: 8px;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+}
+
+/* Reset moderno */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--spacing-lg);
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Links generales */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: #0078d7;
+}
+
+/* Títulos */
+h1, h2, h3 {
+  color: var(--primary-color);
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  box-shadow: var(--shadow-lg);
+  width: 280px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: var(--spacing-md);
+  z-index: 1000;
+  transition: transform var(--transition-speed) ease;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  list-style-type: none;
+}
+
+.navbar ul li a {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--text-light);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-speed);
+}
+
+.navbar ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(var(--spacing-xs));
+}
+
+/* Contenido principal */
+main {
+  flex-grow: 1;
+  padding: var(--spacing-md);
+  margin-top: 80px;
+  margin-left: 280px;
+}
+
+/* Sección Hero */
+.hero {
+  padding: var(--spacing-lg);
+  background-image: url('hero-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-color: #e0f7fa;
+  text-align: center;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: var(--spacing-md);
+}
+
+.btn-primary {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: background-color var(--transition-speed);
+}
+
+.btn-primary:hover {
+  background-color: #0078d7;
+}
+
+/* Sección de beneficios */
+.benefits {
+  padding: var(--spacing-lg);
+  background-color: var(--background-light);
+  text-align: center;
+}
+
+.benefits-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+.benefit {
+  text-align: center;
+  max-width: 300px;
+  flex: 1 1 300px;
+}
+
+.benefit img {
+  max-width: 100px;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Tarjetas */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform var(--transition-speed);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: var(--spacing-md);
+}
+
+.card-content h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.card-content p {
+  color: #666;
+}
+
+/* Formulario */
+form {
+  background: #fff;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  max-width: 600px;
+  margin: var(--spacing-md) auto;
+}
+
+form input, form textarea, form select {
+  width: 100%;
+  padding: var(--spacing-sm);
+  margin: var(--spacing-sm) 0;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+}
+
+form button {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+form button:hover {
+  background-color: #0078d7;
+}
+
+/* Estilos "Acerca de Nosotros" */
+.acerca-pagina {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+.acerca-pagina .hero {
+  background-color: #ffcccc; 
+  text-align: center;
+  padding: 50px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.acerca-pagina .hero:hover {
+  background-color: #ff9999; 
+}
+
+.acerca-pagina .hero h1 {
+  color: #cc0000; 
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.acerca-pagina .hero p {
+  font-size: 1.2em;
+  color: #660000;
+}
+
+.acerca-pagina section {
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-left: 5px solid #cc0000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.acerca-pagina section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.acerca-pagina section h2 {
+  color: #000000; 
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ffcccc; 
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.acerca-pagina section p {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.acerca-pagina footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #cc0000; 
+  color: #fff; 
+  font-size: 0.9em;
+}
+
+.acerca-pagina a {
+  color: #cc0000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.acerca-pagina a:hover {
+  color: #660000;
+  text-decoration: underline;
+}
+
+/* Sección de preguntas frecuentes */
+.faq-section {
+  padding: var(--spacing-lg);
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-lg);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.faq-section:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.faq-section h2 {
+  color: #cc0000;
+  font-size: 1.8em;
+  margin-bottom: var(--spacing-sm);
+  border-bottom: 2px solid #ffcccc;
+  padding-bottom: 5px;
+}
+
+.faq-section p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Iconos junto a las preguntas */
+.faq-icon {
+  margin-right: var(--spacing-sm);
+  vertical-align: middle;
+  color: #cc0000;
+}
+
+/* Enlaces dentro de la FAQ */
+.faq-section a {
+  color: #cc0000;
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.faq-section a:hover {
+  color: #660000;
+  text-decoration: underline;
+}
+
+/* Respuestas de la FAQ */
+.faq-answer {
+  margin-left: var(--spacing-md);
+  color: #666;
+  font-size: 1.1em;
+}
+
+.faq-section h2 {
+  cursor: pointer;
+  transition: color var(--transition-speed);
+}
+
+.faq-section h2:hover {
+  color: #0078d7;
+}
+
+/* Estilos "Nuestros Programas" */
+.page-programas .hero {
+  background-image: url('assets/images/hero-programas.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+}
+
+.page-programas .grid-container .card img {
+  width: 100%;
+  height: 250px; 
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+/* Contactos */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.contact-card {
+  text-align: center;
+  padding: 10px;
+}
+
+.contact-card img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.contact-card h3 {
+  margin-bottom: 5px;
+  color: #0056b3;
+}
+
+.social-media {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-media a {
+  color: #0056b3;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: var(--spacing-md);
+  background-color: #ffffff;
+  color: var(--text-dark);
+  margin-left: 280px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+  .navbar {
+    width: 240px;
+  }
+
+  main, footer {
+    margin-left: 240px;
+  }
+
+  .benefits-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  main, footer {
+    margin-left: 0;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; 
+  }
+
+  .hero {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 28px; 
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .btn-primary {
+    padding: var(--spacing-xs) var(--spacing-sm); 
+  }
+
+  .benefit {
+    max-width: 100%;
+  }
+
+  footer {
+    padding: var(--spacing-sm);
+  }
+}
